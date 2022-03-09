@@ -1,4 +1,11 @@
-
+/* 
+Runs quiz that continuously asks user if he/she wants to play
+If user chooses 1 then the game keeps going 
+Else the game ends. 
+Answer choices are 1 - 5;
+The quiz_runner function takes in an array of questions, an array of arrays of answers matching index of questions
+and an array of correct answers.
+*/
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,7 +17,8 @@ public class Quiz {
         System.out.println("Welcome to the general knowledge quiz.");
         boolean keepPlaying = true;
         int i = 0;
-        while (keepPlaying == true) {
+        while (keepPlaying == true)  // maintains the game as long as keep playing is activated
+         {
             if (i == questions.length) {
                 i = 0;
             }
@@ -34,7 +42,8 @@ public class Quiz {
             else if (ans != correct_answers[i]){
                 System.out.println("Wrng answer. Sorry!");
             }
-            System.out.println("You took " + timetaken + " seconds to answer.");
+            // takes in user choice on whether or not they want to keep playing
+            System.out.println("You took " + timetaken + " seconds to answer."); 
             Scanner user_response = new Scanner(System.in);
                 System.out.print("Do you want to keep playing? Answer 1 for yes and 0 for no. ");  
                 int str1= user_response.nextInt();  

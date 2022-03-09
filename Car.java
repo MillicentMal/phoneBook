@@ -32,7 +32,7 @@ public class Car {
     }
 
     private static void red(Queue<Integer> car) throws InterruptedException {
-        
+        // stops the cars from moving for 10 seconds
         for (int k=10; k > 0; k--){
             System.out.println("Lights on Red. Cars left in queue:  " + car.size());
             System.out.println("Please stop. Just " + k + "seconds left");
@@ -52,8 +52,9 @@ public class Car {
         
         }
 
-        while (car.size() > 0) {
+        while (car.size() > 0) {  // calls the traffic lights methods
             green(car);
+
             yellow(car);
             red(car);
             
